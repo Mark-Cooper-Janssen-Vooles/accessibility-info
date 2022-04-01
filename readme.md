@@ -25,7 +25,7 @@ Contents:
 
 
 
-### What is accessibility? 
+## What is accessibility? 
 
 Accessibility is the practice of making your websites usable by as many people as possible. I.e. those with disability, those using a mobile, or those with a slow network connection. 
 
@@ -75,7 +75,7 @@ doing some testing with disabled user groups to see how well more complex site f
 - If content updates dynamically, do visually impaired people know about it?
 - Are my UI buttons accessible using the keyboard and on touch interfaces?
 
-### HTML: A good basis for accessibility 
+## HTML: A good basis for accessibility 
 
 A great deal of web content can be made accessible just by making sure the correct Hypertext Markup Language elements are used for the correct purpose at all times, the importance of using semantic HTML. I.e.
 ````js
