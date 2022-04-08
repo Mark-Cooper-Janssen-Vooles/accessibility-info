@@ -21,6 +21,10 @@ Contents:
   - Text alternatives (alt)
   - Link Styling
 - CSS and JavaScript accessibility best practices
+  - CSS 
+  - JavaScript
+- WAI-ARIA basics
+- Accessible Multimedia
 
 
 
@@ -239,3 +243,39 @@ imgThumb.onmouseout = hideImg;
 imgThumb.onfocus = showImg;
 imgThumb.onblur = hideImg;
 ````
+
+## WAI-ARIA basics
+
+(Web Accessibility Initiative - Accessible Rich Internet Applications) 
+
+You should only use WAI-ARIA when you need to! Ideally, you should always use native HTML features to provide the semantics required by screenreaders to tell their users what is going on.
+
+sometimes making complex UI controls that involve unsemantic HTML and dynamic JavaScript-updated content can be difficult. WAI-ARIA is a technology that can help with such problems by adding in further semantics that browsers and assistive technologies can recognize and use to let users know what is going on
+
+HTML5 introduced a number of semantic elements to define common page features (<nav>, <footer>, etc.) Before these were available, developers would use <div>s with IDs or classes, e.g. <div class="nav">, but these were problematic, as there was no easy way to easily find a specific page feature such as the main navigation programmatically.
+
+Developers quite often rely on JavaScript libraries that generate such controls as a series of nested <div>s or table elements with classnames, which are then styled using CSS and controlled using JavaScript.
+
+#### Enter WAI-ARIA
+
+Web Accessibility Initiative - Accessible Rich Internet Applications is a specification written by the W3C, defining a set of additional HTML attributes that can be applied to elements to provide additional semantics and improve accessibility wherever it is lacking. There are three main features defined in the spec:
+- Roles: These define what an element is or does. Many of these are so-called landmark roles, which largely duplicate the semantic value of HTML5 structural elements e.g. role="navigation" (<nav>), but there are also others that describe different pages structures, such as role="banner", role="search", role="tablist", role="tab", etc., which are commonly found in UIs.
+- Properties: These define properties of elements, which can be used to give them extra meaning or semantics. As an example, aria-required="true" specifies that a form input needs to be filled in order to be valid, whereas aria-labelledby="label" allows you to put an ID on an element, then reference it as being the label for anything else on the page, including multiple elements, which is not possible using <label for="input">
+- States: Special properties that define the current conditions of elements, such as aria-disabled="true", which specifies to a screenreader that a form input is currently disabled. States differ from properties in that properties don't change throughout the lifecycle of an app, whereas states can change, generally programmatically via JavaScript. 
+
+Where is WAI-ARIA supported? 
+Not easy to answer because: 
+- There are a lot of features in the WAI-ARIA spec.
+- There are many combinations of operating system, browser, and screenreader to consider.
+
+When should you use WAI-ARIA? 
+1. Signposts/Landmarks: ARIA's role attribute values can act as landmarks that either replicate the semantics of HTML5 elements (e.g. <nav>), or go beyond HTML5 semantics to provide signposts to different functional areas, e.g search, tablist, tab, listbox, etc.
+2. Dynamic content updates: Screenreaders tend to have difficulty with reporting constantly changing content; with ARIA we can use aria-live to inform screenreader users when an area of content is updated, e.g. via XMLHttpRequest, or DOM APIs.
+3. Enhancing keyboard accessibility: There are built-in HTML elements that have native keyboard accessibility; when other elements are used along with JavaScript to simulate similar interactions, keyboard accessibility and screenreader reporting suffers as a result. Where this is unavoidable, WAI-ARIA provides a means to allow other elements to receive focus (using tabindex).
+4. Accessibility of non-semantic controls: When a series of nested <div>s along with CSS/JavaScript is used to create a complex UI-feature, or a native control is greatly enhanced/changed via JavaScript, accessibility can suffer — screenreader users will find it difficult to work out what the feature does if there are no semantics or other clues. In these situations, ARIA can help to provide what's missing with a combination of roles like button, listbox, or tablist, and properties like aria-required or aria-posinset to provide further clues as to functionality.
+
+Practical implementations: 
+https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics#practical_wai-aria_implementations
+
+
+## Accessible Multimedia
