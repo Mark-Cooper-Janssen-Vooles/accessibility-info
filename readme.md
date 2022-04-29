@@ -109,7 +109,7 @@ By default, browsers allow them to be manipulated by the keyboard (i.e. by press
 You essentially get this behavior for free, just by using the appropriate elements.
 
 Building keyboard accessibility back in: 
-Here we've given our fake <div> buttons the ability to be focused (including via tab) by giving each one the attribute tabindex="0":
+Here we've given our fake ``<div>`` buttons the ability to be focused (including via tab) by giving each one the attribute tabindex="0":
 ````js
 // 
 <div data-message="This is from the first button" tabindex="0">Click me!</div>
@@ -161,7 +161,7 @@ You can create a basic data table like so:
 </table>
 ````
 
-However a better way is to use table headers <th> and <caption>, which provide groupings of data for the screen reader. An example: https://github.com/mdn/learning-area/blob/main/css/styling-boxes/styling-tables/punk-bands-complete.html
+However a better way is to use table headers ``<th>`` and ``<caption>``, which provide groupings of data for the screen reader. An example: https://github.com/mdn/learning-area/blob/main/css/styling-boxes/styling-tables/punk-bands-complete.html
 
 
 Text Alternatives:
@@ -218,7 +218,7 @@ JavaScript can also break accessibility, depending on how it is used.
 
 There is no rule that says all content has to be 100% accessible to all people — you just need to do what you can, and make your apps as accessible as possible.
 
-Complex functionality like 3D games are not so easy to make accessible — a complex 3D game created using WebGL will be rendered on a <canvas> element, which has no facility at this time to provide text alternatives or other information for severely visually impaired users to make use of. 
+Complex functionality like 3D games are not so easy to make accessible — a complex 3D game created using WebGL will be rendered on a ``<canvas>`` element, which has no facility at this time to provide text alternatives or other information for severely visually impaired users to make use of. 
 
 Arguably the main audience isn't blind people, but to make it more accessible, you could implement keyboard controls so it is usable by non-mouse users, and make the color scheme contrasting enough to be usable by those with color deficiencies.
 
@@ -251,15 +251,15 @@ You should only use WAI-ARIA when you need to! Ideally, you should always use na
 
 sometimes making complex UI controls that involve unsemantic HTML and dynamic JavaScript-updated content can be difficult. WAI-ARIA is a technology that can help with such problems by adding in further semantics that browsers and assistive technologies can recognize and use to let users know what is going on
 
-HTML5 introduced a number of semantic elements to define common page features (<nav>, <footer>, etc.) Before these were available, developers would use <div>s with IDs or classes, e.g. <div class="nav">, but these were problematic, as there was no easy way to easily find a specific page feature such as the main navigation programmatically.
+HTML5 introduced a number of semantic elements to define common page features (``<nav>, <footer>,`` etc.) Before these were available, developers would use ``<div>``s with IDs or classes, e.g. ``<div class="nav">``, but these were problematic, as there was no easy way to easily find a specific page feature such as the main navigation programmatically.
 
-Developers quite often rely on JavaScript libraries that generate such controls as a series of nested <div>s or table elements with classnames, which are then styled using CSS and controlled using JavaScript.
+Developers quite often rely on JavaScript libraries that generate such controls as a series of nested ``<div>``s or table elements with classnames, which are then styled using CSS and controlled using JavaScript.
 
 #### Enter WAI-ARIA
 
 Web Accessibility Initiative - Accessible Rich Internet Applications is a specification written by the W3C, defining a set of additional HTML attributes that can be applied to elements to provide additional semantics and improve accessibility wherever it is lacking. There are three main features defined in the spec:
-- Roles: These define what an element is or does. Many of these are so-called landmark roles, which largely duplicate the semantic value of HTML5 structural elements e.g. role="navigation" (<nav>), but there are also others that describe different pages structures, such as role="banner", role="search", role="tablist", role="tab", etc., which are commonly found in UIs.
-- Properties: These define properties of elements, which can be used to give them extra meaning or semantics. As an example, aria-required="true" specifies that a form input needs to be filled in order to be valid, whereas aria-labelledby="label" allows you to put an ID on an element, then reference it as being the label for anything else on the page, including multiple elements, which is not possible using <label for="input">
+- Roles: These define what an element is or does. Many of these are so-called landmark roles, which largely duplicate the semantic value of HTML5 structural elements e.g. role="navigation" (``<nav>``), but there are also others that describe different pages structures, such as role="banner", role="search", role="tablist", role="tab", etc., which are commonly found in UIs.
+- Properties: These define properties of elements, which can be used to give them extra meaning or semantics. As an example, aria-required="true" specifies that a form input needs to be filled in order to be valid, whereas aria-labelledby="label" allows you to put an ID on an element, then reference it as being the label for anything else on the page, including multiple elements, which is not possible using ``<label for="input">``
 - States: Special properties that define the current conditions of elements, such as aria-disabled="true", which specifies to a screenreader that a form input is currently disabled. States differ from properties in that properties don't change throughout the lifecycle of an app, whereas states can change, generally programmatically via JavaScript. 
 
 Where is WAI-ARIA supported? 
@@ -271,7 +271,7 @@ When should you use WAI-ARIA?
 1. Signposts/Landmarks: ARIA's role attribute values can act as landmarks that either replicate the semantics of HTML5 elements (e.g. <nav>), or go beyond HTML5 semantics to provide signposts to different functional areas, e.g search, tablist, tab, listbox, etc.
 2. Dynamic content updates: Screenreaders tend to have difficulty with reporting constantly changing content; with ARIA we can use aria-live to inform screenreader users when an area of content is updated, e.g. via XMLHttpRequest, or DOM APIs.
 3. Enhancing keyboard accessibility: There are built-in HTML elements that have native keyboard accessibility; when other elements are used along with JavaScript to simulate similar interactions, keyboard accessibility and screenreader reporting suffers as a result. Where this is unavoidable, WAI-ARIA provides a means to allow other elements to receive focus (using tabindex).
-4. Accessibility of non-semantic controls: When a series of nested <div>s along with CSS/JavaScript is used to create a complex UI-feature, or a native control is greatly enhanced/changed via JavaScript, accessibility can suffer — screenreader users will find it difficult to work out what the feature does if there are no semantics or other clues. In these situations, ARIA can help to provide what's missing with a combination of roles like button, listbox, or tablist, and properties like aria-required or aria-posinset to provide further clues as to functionality.
+4. Accessibility of non-semantic controls: When a series of nested ``<div>``s along with CSS/JavaScript is used to create a complex UI-feature, or a native control is greatly enhanced/changed via JavaScript, accessibility can suffer — screenreader users will find it difficult to work out what the feature does if there are no semantics or other clues. In these situations, ARIA can help to provide what's missing with a combination of roles like button, listbox, or tablist, and properties like aria-required or aria-posinset to provide further clues as to functionality.
 
 Practical implementations: 
 https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics#practical_wai-aria_implementations
@@ -310,7 +310,7 @@ Special considerations:
     - i.e. mouse-specific events like 'mousedown' and 'mouseup' create problems - their event handlers will not be invoked using non-mouse controls. 
   - Some events, i.e. the 'click' event is good in terms of accessibility - the associated event handler is invoked by clicking, tabbing and pressing enter, or tapping on a touch screen device
 2. User Input: Make user input requirements as painless as possible on mobile (e.g. in forms keep typing to a minimum)
-  - minimise the amount of typing needed. instead of getting users to fill out their job title each time using a regular text input, you could instead offer a <select> meun offering the common options.
+  - minimise the amount of typing needed. instead of getting users to fill out their job title each time using a regular text input, you could instead offer a ``<select>`` meun offering the common options.
   - ensure HTML5 form input types such as the date are handled well 
 3. Responsive Design: Make sure layouts work on mobile 
   - The practice of making your layouts and other features of your app dynamically change depending on factors like screen size and resolution, so they are usable and accessible to users of different device types 
@@ -348,7 +348,7 @@ The main two are 'TalkBack' on Android and 'VoiceOver' on iOS.
   - Sometimes when using javascript, you'll need to use some WAI-ARIA attributes in to help solve accessibility problems caused by areas of content constantly updating without a page reload (screen readers won't pick this up or alert users to it by default).
     - You should only use WAI-ARAI when you need to, always preference semantic HTML.
     - WAI-ARIA is a technology that can help with such problems by adding in further semantics that browsers and assistive technologies can recognize and use to let users know what is going on
-    - I.e. ARIA's role attribute values can act as landmarks that either replicate the semantics of HTML5 elements (e.g. <nav>), or go beyond HTML5 semantics to provide signposts to different functional areas, e.g search, tablist, tab, listbox, etc.
+    - I.e. ARIA's role attribute values can act as landmarks that either replicate the semantics of HTML5 elements (e.g. ``<nav>``), or go beyond HTML5 semantics to provide signposts to different functional areas, e.g search, tablist, tab, listbox, etc.
   - mouse-specific events like mouseover, mouseout, dblclick, etc. Functionality that runs in response to these events will not be accessible using other mechanisms, like keyboard controls or touch screen on a mobile and will need to be accounted for using other ways.
 - Add a jest Axe tool to your tests for the different components. Only ~30% of a11y issues are found using this method, but its a start. We should also test our interface with the assistive technologies real users use (i.e. screen readers, mobile) and include people with disabilities in user research. 
 
