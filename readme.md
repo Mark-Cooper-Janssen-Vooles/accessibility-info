@@ -5,12 +5,12 @@ Accessibility (often abbreviated to A11y) means enabling as many people as possi
 https://developer.mozilla.org/en-US/docs/Web/Accessibility
 
 Contents:
-- What is accessibility?
+- [What is accessibility?](#what-is-accessibility)
   - People with visual impairments 
   - People with hearing impairments 
   - People with mobility impairments 
   - People with cognitive impairments 
-- HTML: A good basis for accessibility
+- [HTML: A good basis for accessibility](#html-a-good-basis-for-accessibility)
   - Semantic markup
   - Text Content
   - Using clear language
@@ -20,12 +20,13 @@ Contents:
   - Accessible Data Tables
   - Text alternatives (alt)
   - Link Styling
-- CSS and JavaScript accessibility best practices
+- [CSS and JavaScript accessibility best practices](#css-and-javascript-accessibility-best-practices)
   - CSS 
   - JavaScript
-- WAI-ARIA basics
-- Accessible Multimedia
-- Mobile Accessibility 
+- [WAI-ARIA basics](#wai-aria-basics)
+- [Accessible Multimedia](#accessible-multimedia)
+- [Mobile Accessibility](#mobile-accessibility) 
+- [Practical Considerations / Summary](#practical-considerations--summary)
 
 
 
