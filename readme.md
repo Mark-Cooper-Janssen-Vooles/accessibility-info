@@ -25,6 +25,7 @@ Contents:
   - JavaScript
 - WAI-ARIA basics
 - Accessible Multimedia
+- Mobile Accessibility 
 
 
 
@@ -279,3 +280,52 @@ https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics#pra
 
 
 ## Accessible Multimedia
+
+Multimedia can also create accessibility problems - video, audio, and image content need proper textual alternatives. 
+
+1. Simple Images
+  - Ensure where possible visual content has an alternative text available for screenreaders to pick up and read to their users. 
+2. Accessible audio and video controls
+  - The native HTML5 comes with a set of inbuild controls, however:
+    - they are not keyboard-accessible in most browsers (you can't tab between them)
+    - different browsers give the native controls differing styling and functionality
+  - We can create our custom controls to remedy this
+    - there is a guide on how to do this here: https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Multimedia
+3. Audio transcripts 
+  - to provide deaf people with access to audio content, you need to create text transcripts
+4. Video text tracks
+  - makes video accessibile for deaf, visually impared
+  - the main ones include:
+    - captions
+    - subtitles
+    - descriptions
+    - chapter titles
+
+
+## Mobile Accessibility 
+
+Generally, to make a website accessible and usable on mobile, you just need to follow general good web design and accessibility best practices. 
+
+Special considerations:
+1. Control mechanisms: Make sure interface controls such as buttons are accessible (i.e. work with touchscreen)
+  - Events can be specific to a certain type of control mechanism (ie mouse-specific events) which can cause accessibility issues
+    - i.e. mouse-specific events like 'mousedown' and 'mouseup' create problems - their event handlers will not be invoked using non-mouse controls. 
+  - Some events, i.e. the 'click' event is good in terms of accessibility - the associated event handler is invoked by clicking, tabbing and pressing enter, or tapping on a touch screen device
+2. User Input: Make user input requirements as painless as possible on mobile (e.g. in forms keep typing to a minimum)
+  - minimise the amount of typing needed. instead of getting users to fill out their job title each time using a regular text input, you could instead offer a <select> meun offering the common options.
+  - ensure HTML5 form input types such as the date are handled well 
+3. Responsive Design: Make sure layouts work on mobile 
+  - The practice of making your layouts and other features of your app dynamically change depending on factors like screen size and resolution, so they are usable and accessible to users of different device types 
+  - Some common problems for mobile devices:
+    - suitability of layouts: a multi-column layout won't work as well on a narrow screen.You can solve this with things like media queries, viewport and flexbox.
+    - conserving image sizes downloaded. small screens won't need images as large as desktop counterparts and are more likely to have slow network connections. it is wise to serve smaller images to narrow devices. more info here: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+    - some mobile resoltions are very high - SVG images have a small file size and will stay sharp regardless of whatever size is being displayed. 
+    - not disabling zoom (never set user-scalable=no). Always ensure resizing is enabled.
+    - Keeping menus accessible, i.e. a "hamburger menu" is a common approach 
+
+#### Screen reader testing on Android and iOS:
+
+The most common mobile platforms have fully functional screen readers, which are similar to desktop screenreaders but are operated using touch gestures rather than key combinations. 
+
+The main two are 'TalkBack' on Android and 'VoiceOver' on iOS. 
+
