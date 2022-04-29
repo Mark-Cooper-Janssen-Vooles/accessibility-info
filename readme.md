@@ -38,41 +38,38 @@ Building accessible sites benefit everyone:
 - Semantic HTML, which improves accessibility, also improves SEO, making your site more findable.
 - Caring about accessibility demonstrates good ethics and morals, which improves your public image.
 - Other good practices that improve accessibility also make your site more usable by other groups, such as mobile phone users or those on low network speed. In fact, everyone can benefit from many such improvements.
-- Did we mention it is also the law in some places?
+- It is also the law in some places
 
 People with Visual Impairments:
-Often use screen magnifiers (either physical o rsoftware zoom capabilities, i.e. most browsers have zoom). Some users rely on screen readers.
+Often use screen magnifiers (either physical or software zoom capabilities, i.e. most browsers have zoom). Some users rely on screen readers.
 
 Some screen reader examples include:
 - Paid commercial products, like JAWS (Windows) and Dolphin Screen Reader (Windows).
 - Free products, like NVDA (Windows), ChromeVox (Chrome), and Orca (Linux).
 - Software built into the operating system, like VoiceOver (macOS, iPadOS, iOS), Narrator (Windows), ChromeVox (on Chrome OS), and TalkBack (Android).
 
-World Health Organization estimates that "285 million people are estimated to be visually impaired worldwide: 39 million are blind and 246 million have low vision." A large and significant population of users to — almost the same size as the population of the United States of America.
-
-People with hearing impairments: 
-People have various levels of hearing loss ranging from mild to profound. Although some do use AT (assistive devices), they are not widespread.
-
-To provide access, textual alternatives must be provided. Videos should be manually captioned, and transcripts should be provided for audio content. "466 million people worldwide have disabling hearing loss", says the World Health Organization.
-
-People with mobility impairments: 
-These people have disabilities concerning movement. Some people might have difficulty making the exact hand movements required to use a mouse
-
-The way this usually affects web development work is the requirement that controls be accessible by the keyboard. Can you use the Tab key to move between the different controls of a web form, for example?
-
-People with cognitive impairments: 
-Cognitive impairment refers to a broad range of disabilities, from people with intellectual disabilities who have the most-limited capabilities, to all of us as we age and have difficulty thinking and remembering. The range includes people with mental illnesses, such as depression and schizophrenia. It also includes people with learning disabilities, such as dyslexia and attention deficit hyperactivity disorder. Importantly, though there is a lot of diversity within clinical definitions of cognitive impairments, people with them experience a common set of functional problems. These include difficulty with understanding content, remembering how to complete tasks, and confusion caused by inconsistent webpage layouts.
-
-A good foundation of accessibility for people with cognitive impairments includes:
-- Delivering content in more than one way, such as by text-to-speech or by video.
-- Easily understood content, such as text written using plain-language standards.
-- Focusing attention on important content.
-- Minimizing distractions, such as unnecessary content or advertisements.
-- Consistent webpage layout and navigation.
-- Familiar elements, such as underlined links blue when not visited and purple when visited.
-- Dividing processes into logical, essential steps with progress indicators.
-- Website authentication as easy as possible without compromising security.
-- Making forms easy to complete, such as with clear error messages and simple error recovery.
+Types of Impairments: 
+1. Visual:
+  - World Health Organization estimates that "285 million people are estimated to be visually impaired worldwide: 39 million are blind and 246 million have low vision." A large and significant population of users — almost the same size as the population of the United States of America.
+2. People with hearing impairments: 
+  - People have various levels of hearing loss ranging from mild to profound. Although some do use AT (assistive devices), they are not widespread.
+  - To provide access, textual alternatives must be provided. Videos should be manually captioned, and transcripts should be provided for audio content. "466 million people worldwide have disabling hearing loss", says the World Health Organization.
+3. People with mobility impairments: 
+  - These people have disabilities concerning movement. Some people might have difficulty making the exact hand movements required to use a mouse
+  - The way this usually affects web development work is the requirement that controls be accessible by the keyboard. Can you use the Tab key to move between the different controls of a web form, for example?
+4. People with cognitive impairments: 
+  - Cognitive impairment refers to a broad range of disabilities, from people with intellectual disabilities who have the most-limited capabilities, to all of us as we age and have difficulty thinking and remembering. The range includes people with mental illnesses, such as depression and schizophrenia. It also includes people with learning disabilities, such as dyslexia and attention deficit hyperactivity disorder. 
+  - Importantly, though there is a lot of diversity within clinical definitions of cognitive impairments, people with them experience a common set of functional problems. These include difficulty with understanding content, remembering how to complete tasks, and confusion caused by inconsistent webpage layouts.
+  - A good foundation of accessibility for people with cognitive impairments includes:
+    - Delivering content in more than one way, such as by text-to-speech or by video.
+    - Easily understood content, such as text written using plain-language standards.
+    - Focusing attention on important content.
+    - Minimizing distractions, such as unnecessary content or advertisements.
+    - Consistent webpage layout and navigation.
+    - Familiar elements, such as underlined links blue when not visited and purple when visited.
+    - Dividing processes into logical, essential steps with progress indicators.
+    - Website authentication as easy as possible without compromising security.
+    - Making forms easy to complete, such as with clear error messages and simple error recovery.
 
 When planning your project, factor accessibility testing into your testing regime, just like testing for any other important target audience segment (e.g., target desktop or mobile browsers). 
 doing some testing with disabled user groups to see how well more complex site features work for them. For example:
@@ -99,7 +96,7 @@ Text content:
 - One of the best accessibility aids a screen reader user can have is an excellent content structure with headings, paragraphs, lists, etc.
 
 Using clear language: 
-you should use clear language that is not overly complex and doesn't use unnecessary jargon or slang terms. This benefits all readers. ou should try to avoid using language and characters that don't get read out clearly by the screen reader. For example:
+you should use clear language that is not overly complex and doesn't use unnecessary jargon or slang terms. This benefits all readers. You should try to avoid using language and characters that don't get read out clearly by the screen reader. For example:
 - Don't use dashes if you can avoid it. Instead of writing 5–7, write 5 to 7.
 - Expand abbreviations — instead of writing Jan, write January.
 - Expand acronyms, at least once or twice, then use the tag to describe them.
@@ -170,7 +167,7 @@ Text Alternatives:
 alt text will be read allowed by a screen reader. 
 One thing to consider is whether your images have meaning inside your content, or whether they are purely for visual decoration, and thus have no meaning. If they are decorative, it is better to write an empty text as a value for alt attribute
 
-If you do want to provide extra contextual information, you should put it in the text surrounding the image, or inside a title attribute, as shown above. In this case, most screen readers will read out the alt text, the title attribute, and the filename.
+If you do want to provide extra contextual information, you should put it in the text surrounding the image, or inside a title attribute, as shown below. In this case, most screen readers will read out the alt text, the title attribute, and the filename.
 
 ````js
 <img src="dinosaur.png"
@@ -328,4 +325,29 @@ Special considerations:
 The most common mobile platforms have fully functional screen readers, which are similar to desktop screenreaders but are operated using touch gestures rather than key combinations. 
 
 The main two are 'TalkBack' on Android and 'VoiceOver' on iOS. 
+
+
+## Practical Considerations / Summary: 
+
+- HTML Semantics: 
+  - Using the correct HTML semantics will give you things for free. You can use a div but you should use a button. 
+- Use clear simple language.
+- For images:
+  - alt text will be read allowed by a screen reader.
+  - One thing to consider is whether your images have meaning inside your content, or whether they are purely for visual decoration, and thus have no meaning. If they are decorative, it is better to write an empty text as a value for alt attribute. 
+  - If you do want to provide extra contextual information, you should put it in the text surrounding the image, or inside a title attribute. In this case, most screen readers will read out the alt text, the title attribute, and the filename.
+- For links:
+  - Link text color, like all text, has to be significantly different from the background color (a 4.5:1 contrast). 
+  - links should visually be significantly different from non-linking text, with a minimum contrast requirement of 3:1 between link text and surrounding text and between default, visited, and focus/active states and a 4:5 contrast between all those state colors and the background color.
+  - Links that open in a new tab or window via the target="_blank" declaration and links to whose href value points to a file resource should include an indicator about the behavior that will occur when the link is activated.
+- CSS:
+  - It is possible to use CSS to make any HTML element look like anything, but this doesn't mean that you should. you should use the appropriate semantic element for the job, whenever possible.
+  - you shouldn't use visibility:hidden or display:none, because they do hide content from screen readers. Unless of course, there is a good reason why you want this content to be hidden from screen readers.
+- Javascript:
+  - Sometimes when using javascript, you'll need to use some WAI-ARIA attributes in to help solve accessibility problems caused by areas of content constantly updating without a page reload (screen readers won't pick this up or alert users to it by default).
+    - You should only use WAI-ARAI when you need to, always preference semantic HTML.
+    - WAI-ARIA is a technology that can help with such problems by adding in further semantics that browsers and assistive technologies can recognize and use to let users know what is going on
+    - I.e. ARIA's role attribute values can act as landmarks that either replicate the semantics of HTML5 elements (e.g. <nav>), or go beyond HTML5 semantics to provide signposts to different functional areas, e.g search, tablist, tab, listbox, etc.
+  - mouse-specific events like mouseover, mouseout, dblclick, etc. Functionality that runs in response to these events will not be accessible using other mechanisms, like keyboard controls or touch screen on a mobile and will need to be accounted for using other ways.
+- Add a jest Axe tool to your tests for the different components. Only ~30% of a11y issues are found using this method, but its a start. We should also test our interface with the assistive technologies real users use (i.e. screen readers, mobile) and include people with disabilities in user research. 
 
